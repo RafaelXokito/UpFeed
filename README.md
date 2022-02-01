@@ -38,8 +38,7 @@ List of Entities.
   - StudyRoom (Id [PK])
   - SubjectRoom (Id [PK], Weight [Nullable]) //Componente TP-PL
 - Grades (Id [PK], Value, Student [FK - Student], SubjectRoom [FK - SubjectRoom], Notes)
-- Notes (Owner [FK - Person], Title, Description, Status [Boolean])
-- RoomUsers (RoomId [PK], UserId [PK])
+- Notes (Owner [FK - Users], Title, Description, Status [Boolean])
 
 ## Features
 
