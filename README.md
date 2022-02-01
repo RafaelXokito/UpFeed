@@ -31,14 +31,14 @@ List of Entities.
   - Users
     - Teachers
     - Students
-- Posts (Id [PK], Owner [FK - User], Room [FK - Room], Content, Documents 1-N [FK - Document], Type ['M','A','G'], Date [Nullable] //se for do Type Grade (G) ou se for agendado)
+- Posts (Id [PK], Owner [FK - User], Room [FK - Room], Content, Documents 1-N [FK - Document], Type ['M','A','G'], Date [Nullable] //se for do Type 'A')
 - Documents (Id [PK], Path, FullPath, Type)
-- Rooms (Id [PK], Owner [FK - User] //por exemplo Coordenador da cadeira ou Estudante)
-  - StudyRoom
-  - SubjectRoom (Weight [Nullable])
-- Channels (Room [FK - Room], Owner [FK - Teacher, Nullable] //Responsavel pela componente TP/PL ou apenas um Estudante,  )
-- Grades (Id [PK], Grade, Teacher [FK - Teacher], Student [FK - Student], Notes)
-- Notes (Owner [FK - Person], Description)
+- Channels (Id [PK], Owner [FK - User] //por exemplo Coordenador da cadeira ou Estudante, ,Title, Description, Type [Boolean] //0 - Study, 1 - Subject)
+- Rooms (Id [PK], Room [FK - Channel], Title, Description)
+  - StudyRoom (Id [PK])
+  - SubjectRoom (Id [PK], Weight [Nullable]) //Componente TP-PL
+- Grades (Id [PK], Value, Student [FK - Student], SubjectRoom [FK - SubjectRoom], Notes)
+- Notes (Owner [FK - Person], Title, Description, Status [Boolean])
 - RoomUsers (RoomId [PK], UserId [PK])
 
 ## Features
