@@ -9,14 +9,14 @@ import java.util.List;
 
 //TODO Inheritance
 @Entity
-public class User extends Person{
-    @OneToMany(mappedBy = "userId", cascade = CascadeType.REMOVE)
+public abstract class User extends Person{
+    @OneToMany(mappedBy = "owner", cascade = CascadeType.REMOVE)
     private List<Note> notes;
-    @OneToMany(mappedBy = "userId", cascade = CascadeType.REMOVE)
+    @OneToMany(mappedBy = "owner", cascade = CascadeType.REMOVE)
     private List<Category> categories;
-    @OneToMany(mappedBy = "userId", cascade = CascadeType.REMOVE)
+    @OneToMany(mappedBy = "owner", cascade = CascadeType.REMOVE)
     private List<Post> posts;
-    @OneToMany(mappedBy = "userId", cascade = CascadeType.REMOVE)
+    @OneToMany(mappedBy = "owner", cascade = CascadeType.REMOVE)
     private List<Channel> channels;
 
     public User() {

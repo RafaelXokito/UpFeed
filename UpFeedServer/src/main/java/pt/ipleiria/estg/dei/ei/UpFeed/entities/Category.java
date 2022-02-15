@@ -18,7 +18,7 @@ public class Category implements Serializable {
     @ManyToOne
     @JoinColumn(name = "userId")
     private User owner;
-    @OneToMany(mappedBy = "categoryId", cascade = CascadeType.REMOVE)
+    @OneToMany(mappedBy = "category", cascade = CascadeType.REMOVE)
     private List<Note> notes;
 
     public Category() {

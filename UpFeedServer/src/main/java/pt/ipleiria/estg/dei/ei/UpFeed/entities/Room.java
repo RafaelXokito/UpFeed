@@ -16,7 +16,7 @@ public class Room implements Serializable {
     private String description;
     @ManyToMany(mappedBy = "rooms")
     private List<Student> students;
-    @OneToMany(mappedBy = "roomId", cascade = CascadeType.REMOVE)
+    @OneToMany(mappedBy = "room", cascade = CascadeType.REMOVE)
     private List<Post> posts;
     @ManyToOne
     @JoinColumn(name = "channelId")

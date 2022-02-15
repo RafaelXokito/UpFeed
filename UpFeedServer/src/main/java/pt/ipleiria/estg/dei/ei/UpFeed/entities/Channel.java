@@ -25,7 +25,7 @@ public class Channel implements Serializable {
     @NotNull
     private int weight;
     @NotNull
-    @OneToMany(mappedBy = "channelId", cascade = CascadeType.REMOVE)
+    @OneToMany(mappedBy = "channel", cascade = CascadeType.REMOVE)
     private List<Room> rooms;
 
     public Channel() {

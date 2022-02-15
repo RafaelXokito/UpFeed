@@ -15,7 +15,7 @@ public class Note implements Serializable {
     @NotNull
     @ManyToOne
     @JoinColumn(name = "userId")
-    private Student owner;
+    private User owner;
     @NotNull
     private String description;
     @NotNull

@@ -13,8 +13,9 @@ import java.security.NoSuchAlgorithmException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-@Table(name = "persons")
+@Table(name = "PERSONS")
 //TODO strategy annotation for inheritance and check the other pt.ipleiria.estg.dei.ei.UpFeed.entities - Admin, User, Teacher and Student
+@Inheritance(strategy = InheritanceType.JOINED) //Big inheritance cannot be in a single table, we need to spread the most we can
 @Entity
 public class Person {
     @Id
